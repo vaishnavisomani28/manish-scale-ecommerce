@@ -107,7 +107,7 @@ export function Navbar() {
             <div className="flex items-center gap-4">
             <span className="hidden md:flex items-center gap-2 text-slate-400 text-xs font-medium">
               <Sparkles className="w-3 h-3" />
-              Registered Trademark • GST No. 24ADBPM0391A1Z8
+              GST No. 24ADBPM0391A1Z8
             </span>
             <div className="flex items-center gap-3" role="list" aria-label="Social media links">
               <a href="#" className="hover:text-white transition-colors p-1" aria-label="Facebook" role="listitem">

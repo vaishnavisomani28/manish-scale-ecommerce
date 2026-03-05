@@ -16,8 +16,8 @@ const features = [
   },
   {
     icon: Truck,
-    title: 'Registered Trademark (GST No. 24ADBPM0391A1Z8)',
-    description: 'Trusted brand for precision weighing solutions across India'
+    title: 'GST No. 24ADBPM0391A1Z8',
+    description: 'Registered and compliant manufacturer for precision weighing solutions across India'
   },
   {
     icon: Headphones,

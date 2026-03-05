@@ -43,7 +43,7 @@ export function Footer() {
   const badges = [
     { icon: Award, label: 'ISO Certified' },
     { icon: Shield, label: '1 Year Warranty' },
-    { icon: Truck, label: 'Registered Trademark (GST No. 24ADBPM0391A1Z8)' }
+    { icon: Truck, label: 'GST No. 24ADBPM0391A1Z8' }
   ];
 
   return (
@@ -272,6 +272,14 @@ export function Footer() {
               <Link to="/sitemap" className="text-gray-500 hover:text-white transition-colors">
                 Sitemap
               </Link>
+              <a
+                href="https://share.google/BFm1HVLjVwez8BzKC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-white transition-colors"
+              >
+                View on Google Maps
+              </a>
             </div>
           </div>
         </div>

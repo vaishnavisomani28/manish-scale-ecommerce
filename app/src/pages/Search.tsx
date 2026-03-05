@@ -162,9 +162,7 @@ export function Search() {
                       >
                         {compareList.includes(product.id) ? (
                           <Check className="w-4 h-4" />
-                        ) : (
-                          <span className="text-xs">VS</span>
-                        )}
+                        ) : null}
                       </button>
                     </div>
 

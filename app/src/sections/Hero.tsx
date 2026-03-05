@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Users, Globe, TrendingUp, Scale, Phone } from 'lucide-react';
 import { IMAGES } from '@/lib/productImages';
@@ -23,16 +23,23 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
   return <span>{count}{suffix}</span>;
 }
 
-export function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start']
-  });
+const heroSlides = [
+  IMAGES.hero,
+  IMAGES.counter,
+  IMAGES.electronic,
+  IMAGES.beam,
+  IMAGES.hanging,
+];
 
-  // Light parallax - reduced range to avoid jank
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+export function Hero() {
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
 
   const stats = [
     { icon: Award, value: 65, suffix: '+', label: 'Years Experience' },
@@ -51,7 +58,6 @@ export function Hero() {
 
   return (
     <section 
-      ref={containerRef} 
       className="relative min-h-screen overflow-hidden"
       aria-label="Manish Scale - Premium Weighing Solutions"
     >
@@ -63,7 +69,6 @@ export function Hero() {
       {/* Animated Background */}
       <motion.div 
         className="absolute inset-0 z-0"
-        style={{ y: backgroundY }}
       >
         {/* Base gradient */}
         <div className="absolute inset-0 animated-gradient" />
@@ -81,7 +86,6 @@ export function Hero() {
       {/* Content */}
       <motion.div 
         className="relative z-10 container mx-auto px-4 pt-24 pb-16 lg:pt-32 lg:pb-24"
-        style={{ opacity }}
       >
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[70vh]">
           {/* Left Content */}
@@ -199,15 +203,15 @@ export function Hero() {
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                Registered Trademark (GST No. 24ADBPM0391A1Z8)
+                GST No. 24ADBPM0391A1Z8
               </span>
             </motion.div>
           </div>
 
           {/* Right Content - 3D Product Showcase */}
           <motion.div
-            initial={{ opacity: 0, x: 50, rotateY: -10 }}
-            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="hidden lg:block"
             style={{ perspective: 1000 }}
@@ -220,14 +224,18 @@ export function Hero() {
                   BESTSELLER
                 </div>
 
-                {/* Product Image */}
+                {/* Product Image Slider */}
                 <div className="relative h-72 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center border border-slate-200 shadow-inner">
-                  <img
-                    src={IMAGES.hero}
-                    alt="Premium Digital Table Top Scale - 30kg capacity"
+                  <motion.img
+                    key={slideIndex}
+                    src={heroSlides[slideIndex]}
+                    alt="Featured weighing scale"
                     className="w-full h-64 object-contain drop-shadow-2xl"
                     loading="eager"
                     decoding="async"
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
                   />
                   
                   {/* Floating specs */}
@@ -236,6 +244,19 @@ export function Hero() {
                   </div>
                   <div className="absolute right-4 bottom-4 px-3 py-1.5 bg-slate-600 text-white text-xs font-medium rounded-lg">
                     High Precision
+                  </div>
+                  {/* Slider dots */}
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                    {heroSlides.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setSlideIndex(i)}
+                        className={`w-2.5 h-2.5 rounded-full border border-slate-400 ${
+                          i === slideIndex ? 'bg-slate-700' : 'bg-white/70'
+                        }`}
+                        aria-label={`Show slide ${i + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
 

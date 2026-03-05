@@ -264,12 +264,8 @@ export function Quote() {
                 <h3 className="text-xl font-semibold mb-4">Business Hours</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex justify-between">
-                    <span>Monday - Saturday</span>
-                    <span className="font-medium">9:00 AM - 7:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Sunday</span>
-                    <span className="font-medium text-red-500">Closed</span>
+                    <span>Monday - Sunday</span>
+                    <span className="font-medium">7:00 AM - 8:00 PM</span>
                   </li>
                 </ul>
               </div>

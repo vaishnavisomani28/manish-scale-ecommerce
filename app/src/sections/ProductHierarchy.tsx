@@ -27,7 +27,27 @@ const productTree: ProductNode[] = [
     name: 'Counter Scales',
     slug: 'counter',
     icon: <Scale className="w-5 h-5" />,
-    description: 'Perfect for retail shops and commercial use'
+    description: 'Perfect for retail shops and commercial use',
+    children: [
+      {
+        id: 'counter-embossed',
+        name: 'Embossed Body',
+        slug: 'counter',
+        description: 'Heavy-duty embossed body counter scales'
+      },
+      {
+        id: 'counter-plain',
+        name: 'Plain Body',
+        slug: 'counter',
+        description: 'Classic plain body counter scales'
+      },
+      {
+        id: 'counter-super',
+        name: 'Super Body',
+        slug: 'counter',
+        description: 'Premium super body counter scales for intensive use'
+      }
+    ]
   },
   {
     id: 'beam',
@@ -59,7 +79,7 @@ const productTree: ProductNode[] = [
     children: [
       { id: 'micro', name: 'Micro Scales', slug: 'micro', description: 'Laboratory-grade micro precision' },
       { id: 'tabletop', name: 'Table Top', slug: 'tabletop', description: 'Versatile table top digital scales' },
-      { id: 'chicken', name: 'Chicken/Poultry', slug: 'poultry', description: 'Ideal for poultry and meat applications' },
+      { id: 'chicken', name: 'Chicken/Poultry', slug: 'poultry', description: 'Water for poultry and meat applications' },
       { id: 'platform', name: 'Platform', slug: 'platform', description: 'Heavy duty industrial platforms' },
       { id: 'jewellery', name: 'Jewellery', slug: 'jewellery', description: 'High precision for gems and jewelry' },
       { id: 'kitchen', name: 'Kitchen', slug: 'kitchen', description: 'Compact kitchen scales for home use' },
@@ -76,7 +96,9 @@ const productTree: ProductNode[] = [
     children: [
       { id: 'circular', name: 'Circular', slug: 'circular', description: 'Classic dial display' },
       { id: 'pocket', name: 'Pocket', slug: 'pocket', description: 'Compact pocket-sized' },
-      { id: 'tubular', name: 'Tubular', slug: 'tubular', description: 'Heavy duty tubular design' }
+      { id: 'tubular', name: 'Tubular', slug: 'tubular', description: 'Heavy duty tubular design' },
+      { id: 'digital', name: 'Digital Hanging Scales', slug: 'digital', description: 'Backlit digital display hanging scales' },
+      { id: 'crane', name: 'Crane Scales', slug: 'crane', description: 'Heavy-duty crane scales for industrial lifting' }
     ]
   },
   {

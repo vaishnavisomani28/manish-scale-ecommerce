@@ -175,7 +175,7 @@ export function ProductDetail() {
             <div className="flex items-center gap-4 mb-6">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-5 h-5 text-slate-400 fill-current" />
                 ))}
               </div>
               <span className="text-gray-500">(128 reviews)</span>
@@ -345,7 +345,7 @@ export function ProductDetail() {
                     <div className="flex items-center gap-2 mb-2">
                       <div className="flex">
                         {[...Array(review.rating)].map((_, j) => (
-                          <Star key={j} className="w-4 h-4 text-yellow-400 fill-current" />
+                          <Star key={j} className="w-4 h-4 text-slate-400 fill-current" />
                         ))}
                       </div>
                       <span className="text-sm text-gray-500">{review.date}</span>

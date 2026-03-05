@@ -150,7 +150,7 @@ export const categories: Category[] = [
         id: 'es-poultry',
         name: 'Chicken/Poultry',
         slug: 'poultry',
-        description: 'Water-resistant scales for poultry and meat',
+        description: 'Water for poultry and meat applications',
         products: [
           { id: 'ep-10', name: 'Poultry Scale 10kg', capacity: '10kg', price: 5499, precision: '5g', image: '/images/poultry-10kg.jpg' },
           { id: 'ep-20', name: 'Poultry Scale 20kg', capacity: '20kg', price: 6499, precision: '10g', image: '/images/poultry-20kg.jpg' },
@@ -247,6 +247,20 @@ export const categories: Category[] = [
           { id: 'ht-50', name: 'Tubular Hanging Scale 50kg', capacity: '50kg', price: 1199, precision: '250g', image: '/images/hanging-tubular-50kg.jpg' },
           { id: 'ht-100', name: 'Tubular Hanging Scale 100kg', capacity: '100kg', price: 1699, precision: '500g', image: '/images/hanging-tubular-100kg.jpg' }
         ]
+      },
+      {
+        id: 'hs-digital',
+        name: 'Digital',
+        slug: 'digital',
+        description: 'Digital hanging scales with backlit display',
+        products: []
+      },
+      {
+        id: 'hs-crane',
+        name: 'Crane',
+        slug: 'crane',
+        description: 'Crane scales for heavy industrial lifting',
+        products: []
       }
     ]
   },
