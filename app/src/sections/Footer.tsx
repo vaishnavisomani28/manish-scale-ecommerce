@@ -43,7 +43,7 @@ export function Footer() {
   const badges = [
     { icon: Award, label: 'ISO Certified' },
     { icon: Shield, label: '1 Year Warranty' },
-    { icon: Truck, label: 'Free Shipping' }
+    { icon: Truck, label: 'Registered Trademark (GST No. 24ADBPM0391A1Z8)' }
   ];
 
   return (
@@ -78,12 +78,12 @@ export function Footer() {
                 <h3 className="text-2xl font-bold">
                   <span className="text-blue-400">Manish</span> Scale
                 </h3>
-                <p className="text-xs text-gray-500 tracking-wider">PRECISION SINCE 1994</p>
+                <p className="text-xs text-gray-500 tracking-wider">PRECISION SINCE 1952</p>
               </div>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               India's most trusted manufacturer and supplier of precision weighing scales 
-              since 1994. From micro jewelry scales to heavy-duty platforms, we deliver 
+              since 1952. From micro jewelry scales to heavy-duty platforms, we deliver 
               accuracy you can count on.
             </p>
             <div className="flex gap-3">
@@ -189,8 +189,20 @@ export function Footer() {
                   <MapPin className="w-5 h-5 text-blue-400 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <span className="text-gray-400">
-                  Industrial Area, Phase II,<br />
-                  Ahmedabad, Gujarat - 382415, India
+                  <a
+                    href="https://share.google/BFm1HVLjVwez8BzKC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    3, Shivaji Nagar, Savarkundla,<br />
+                    Dist. Amreli, Gujarat - 364515
+                  </a>
+                  <br />
+                  <span className="text-gray-500">
+                    Branch: B-21, Shivalik Industrial Park, OPP. Karmbhoomi Estate,<br />
+                    Bakrol (Bujrang), Ahmedabad - 382430
+                  </span>
                 </span>
               </li>
               <li className="flex items-center gap-3 group">
@@ -198,11 +210,11 @@ export function Footer() {
                   <Phone className="w-5 h-5 text-green-400 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <div>
-                  <a href="tel:+919925494022" className="text-gray-400 hover:text-white transition-colors block font-medium">
-                    +91 99254 94022
+                  <a href="tel:+919284405090" className="text-gray-400 hover:text-white transition-colors block font-medium">
+                    +91 92844 05090
                   </a>
-                  <a href="tel:+917926543210" className="text-gray-500 hover:text-white transition-colors block text-sm">
-                    +91 79 2654 3210
+                  <a href="tel:+919426951916" className="text-gray-500 hover:text-white transition-colors block text-sm">
+                    +91 94269 51916
                   </a>
                 </div>
               </li>
@@ -224,8 +236,8 @@ export function Footer() {
                   <Clock className="w-5 h-5 text-purple-400 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <span className="text-gray-400">
-                  Mon - Sat: 9:00 AM - 7:00 PM<br />
-                  <span className="text-gray-500">Sunday: Closed</span>
+                  Mon - Sun: 7:00 AM - 8:00 PM<br />
+                  <span className="text-gray-500">Open all 7 days</span>
                 </span>
               </li>
             </ul>
@@ -248,7 +260,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm text-center md:text-left">
               © {new Date().getFullYear()} <span className="text-blue-400">Manish Scale</span>. All rights reserved. 
-              <span className="hidden md:inline"> | Precision Weighing Since 1994</span>
+              <span className="hidden md:inline"> | Precision Weighing Since 1952</span>
             </p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
               <Link to="/privacy" className="text-gray-500 hover:text-white transition-colors">

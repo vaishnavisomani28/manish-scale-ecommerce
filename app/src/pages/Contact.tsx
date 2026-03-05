@@ -89,9 +89,21 @@ export function Contact() {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Address</h4>
                     <p className="text-gray-600">
-                      123 Industrial Area, Phase II<br />
-                      Ahmedabad, Gujarat - 382415<br />
-                      India
+                      <a
+                        href="https://share.google/BFm1HVLjVwez8BzKC"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[#0056b3]"
+                      >
+                        3, Shivaji Nagar, Savarkundla,<br />
+                        Dist. Amreli, Gujarat - 364515<br />
+                        India
+                      </a>
+                      <br />
+                      <span className="text-gray-500">
+                        Branch: B-21, Shivalik Industrial Park, OPP. Karmbhoomi Estate,<br />
+                        Bakrol (Bujrang), Ahmedabad - 382430
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -103,11 +115,11 @@ export function Contact() {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Phone</h4>
                     <p className="text-gray-600">
-                      <a href="tel:+919925494022" className="hover:text-[#0056b3]">
-                        +91 99254 94022
+                      <a href="tel:+919284405090" className="hover:text-[#0056b3]">
+                        +91 92844 05090
                       </a><br />
-                      <a href="tel:+917926543210" className="hover:text-[#0056b3]">
-                        +91 79 2654 3210
+                      <a href="tel:+919426951916" className="hover:text-[#0056b3]">
+                        +91 94269 51916
                       </a>
                     </p>
                   </div>
@@ -137,8 +149,8 @@ export function Contact() {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Business Hours</h4>
                     <p className="text-gray-600">
-                      Monday - Saturday: 9:00 AM - 7:00 PM<br />
-                      Sunday: Closed
+                      Monday - Sunday: 7:00 AM - 8:00 PM<br />
+                      Open all 7 days
                     </p>
                   </div>
                 </div>
@@ -155,7 +167,7 @@ export function Contact() {
                 </div>
               </div>
               <a
-                href="https://wa.me/919925494022"
+                href="https://wa.me/919284405090"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full py-3 bg-white text-[#25D366] text-center rounded-lg font-semibold hover:bg-gray-100 transition-colors"
@@ -283,7 +295,7 @@ export function Contact() {
             className="text-center mb-8"
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Find Us</h2>
-            <p className="text-gray-600">Visit our manufacturing facility in Ahmedabad</p>
+            <p className="text-gray-600">Visit our manufacturing facility in Savarkundla and Ahmedabad</p>
           </motion.div>
 
           <motion.div
@@ -296,7 +308,7 @@ export function Contact() {
               <div className="text-center text-gray-500">
                 <MapPin className="w-16 h-16 mx-auto mb-4" />
                 <p className="text-lg">Interactive Map</p>
-                <p className="text-sm">123 Industrial Area, Phase II, Ahmedabad</p>
+                <p className="text-sm">3, Shivaji Nagar, Savarkundla &amp; Branch at Bakrol (Bujrang), Ahmedabad</p>
               </div>
             </div>
           </motion.div>

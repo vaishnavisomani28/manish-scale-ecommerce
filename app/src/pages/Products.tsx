@@ -20,16 +20,15 @@ export function Products() {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 50000]);
   const [compareList, setCompareList] = useState<string[]>([]);
   const [isCompareDialogOpen, setIsCompareDialogOpen] = useState(false);
   const [pageTitle, setPageTitle] = useState('All Products');
   const contentTopRef = useRef<HTMLDivElement>(null);
 
-  // Scroll to top when view mode or filters change so user sees the result
+  // Scroll to top when view mode changes so user sees the result
   useEffect(() => {
     contentTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [viewMode, priceRange]);
+  }, [viewMode]);
 
   useEffect(() => {
     let cancelled = false;
@@ -90,14 +89,6 @@ export function Products() {
   };
 
   const compareProducts = products.filter(p => compareList.includes(p.id));
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -222,26 +213,7 @@ export function Products() {
                 </ul>
               </div>
 
-              {/* Price Range */}
-              <div className="mb-6">
-                <h4 className="font-medium mb-3">Price Range</h4>
-                <input
-                  type="range"
-                  min="0"
-                  max="50000"
-                  value={priceRange[1]}
-                  onChange={(e) => {
-                    const newMax = parseInt(e.target.value);
-                    setPriceRange([0, newMax]);
-                    setFilteredProducts(products.filter(p => p.price <= newMax));
-                  }}
-                  className="w-full accent-[#0056b3]"
-                />
-                <div className="flex justify-between text-sm text-gray-600 mt-2">
-                  <span>₹0</span>
-                  <span>₹{priceRange[1].toLocaleString()}</span>
-                </div>
-              </div>
+              {/* Additional filters can be added here if needed */}
             </div>
           </aside>
 

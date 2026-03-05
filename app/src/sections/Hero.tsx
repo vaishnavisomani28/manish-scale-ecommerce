@@ -35,9 +35,9 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   const stats = [
-    { icon: Award, value: 30, suffix: '+', label: 'Years Experience' },
-    { icon: Users, value: 10, suffix: 'K+', label: 'Happy Customers' },
-    { icon: Globe, value: 25, suffix: '+', label: 'States Served' },
+    { icon: Award, value: 65, suffix: '+', label: 'Years Experience' },
+    { icon: Users, value: 15, suffix: 'K+', label: 'Happy Customers' },
+    { icon: Globe, value: 25, suffix: '+', label: 'States Covered' },
     { icon: TrendingUp, value: 99, suffix: '.9%', label: 'Accuracy Rate' }
   ];
 
@@ -128,8 +128,8 @@ export function Hero() {
               className="text-lg text-slate-600 mb-8 max-w-xl"
             >
               From micro precision jewelry scales to heavy-duty industrial platforms, 
-              we manufacture premium weighing solutions trusted by over 10,000+ businesses 
-              across India since 1994.
+              we manufacture premium weighing solutions trusted by over 50,000+ businesses 
+              across India since 1952.
             </motion.p>
 
             {/* Category Pills */}
@@ -199,7 +199,7 @@ export function Hero() {
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                Free Shipping India-wide
+                Registered Trademark (GST No. 24ADBPM0391A1Z8)
               </span>
             </motion.div>
           </div>
@@ -258,20 +258,7 @@ export function Hero() {
                     </span>
                   </div>
 
-                  {/* Price */}
-                  <div className="flex items-center justify-center gap-3 mb-4">
-                    <span className="text-4xl font-bold text-slate-800">
-                      ₹4,999
-                    </span>
-                    <span className="text-xl text-slate-400 line-through">
-                      ₹6,999
-                    </span>
-                    <span className="px-2 py-1 bg-slate-100 text-slate-700 text-sm font-semibold rounded">
-                      -29%
-                    </span>
-                  </div>
-
-                  {/* Quick Actions */}
+                {/* Quick Actions */}
                   <div className="flex gap-3">
                     <Link
                       to="/product/ett-30"
@@ -320,11 +307,7 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-slate-400">
-          <span className="text-sm mb-2">Scroll to explore</span>
-          <ChevronDown className="w-6 h-6" />
-        </div>
+        {/* Scroll Indicator removed for smoother scroll experience */}
       </motion.div>
     </section>
   );

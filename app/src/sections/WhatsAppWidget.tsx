@@ -6,7 +6,7 @@ export function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
-  const phoneNumber = '919925494022'; // Replace with actual number
+  const phoneNumber = '919284405090';
   const defaultMessage = 'Hello! I am interested in your weighing scales. Can you provide more information?';
 
   const handleSend = () => {

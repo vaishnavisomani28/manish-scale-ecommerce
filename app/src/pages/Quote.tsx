@@ -222,12 +222,12 @@ export function Quote() {
                 <h3 className="text-xl font-semibold mb-4">Why Choose Us?</h3>
                 <ul className="space-y-4">
                   {[
-                    'Competitive pricing with no hidden costs',
+                    'Transparent quotations with no hidden costs',
                     'Free consultation and site survey',
                     'Custom solutions for your specific needs',
                     'Quick turnaround on quotes (within 24 hours)',
                     'Flexible payment options available',
-                    'PAN India delivery and installation'
+                    'All-India delivery and installation support'
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#28a745] flex-shrink-0 mt-0.5" />
@@ -244,11 +244,11 @@ export function Quote() {
                 </p>
                 <div className="space-y-3">
                   <a 
-                    href="tel:+919925494022" 
+                    href="tel:+919284405090" 
                     className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                   >
                     <Phone className="w-5 h-5" />
-                    <span>+91 99254 94022</span>
+                    <span>+91 92844 05090</span>
                   </a>
                   <a 
                     href="mailto:sales@precisionweigh.com" 

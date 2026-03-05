@@ -45,14 +45,6 @@ export function ProductDetail() {
     };
   }, [id]);
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
-
   if (isLoading) {
     return (
       <motion.main
@@ -189,13 +181,6 @@ export function ProductDetail() {
               <span className="text-gray-500">(128 reviews)</span>
             </div>
 
-            <div className="text-4xl font-bold text-[#0056b3] mb-6">
-              {formatPrice(product.price)}
-              <span className="text-lg text-gray-400 font-normal line-through ml-3">
-                {formatPrice(product.price * 1.2)}
-              </span>
-            </div>
-
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                 <Scale className="w-6 h-6 text-[#0056b3]" />
@@ -242,7 +227,7 @@ export function ProductDetail() {
                 Request Quote
               </Link>
               <a
-                href={`https://wa.me/919925494022?text=Hi, I'm interested in ${product.name}`}
+                href={`https://wa.me/919284405090?text=Hi, I'm interested in ${product.name}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-4 bg-[#25D366] text-white text-center rounded-xl font-semibold hover:bg-[#128C7E] transition-all duration-300 hover:scale-[1.02]"
@@ -259,7 +244,7 @@ export function ProductDetail() {
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <Truck className="w-6 h-6 mx-auto mb-2 text-[#0056b3]" />
-                <p className="text-xs text-gray-600">Free Delivery</p>
+                <p className="text-xs text-gray-600">Pan-India Service Network</p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <Headphones className="w-6 h-6 mx-auto mb-2 text-[#0056b3]" />
@@ -397,8 +382,8 @@ export function ProductDetail() {
                     <h3 className="font-semibold text-gray-800 group-hover:text-[#0056b3] transition-colors">
                       {relatedProduct.name}
                     </h3>
-                    <p className="text-[#0056b3] font-bold mt-2">
-                      {formatPrice(relatedProduct.price)}
+                    <p className="text-sm text-gray-500 mt-2">
+                      View details for capacity and specifications
                     </p>
                   </div>
                 </Link>

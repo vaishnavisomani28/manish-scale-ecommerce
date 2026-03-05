@@ -16,8 +16,8 @@ const features = [
   },
   {
     icon: Truck,
-    title: 'Free Pan-India Delivery',
-    description: 'Free shipping on orders above ₹5000 across all states'
+    title: 'Registered Trademark (GST No. 24ADBPM0391A1Z8)',
+    description: 'Trusted brand for precision weighing solutions across India'
   },
   {
     icon: Headphones,
@@ -77,7 +77,7 @@ export function Home() {
               Why Choose Manish Scale
             </span>
             <h2 id="features-title" className="text-3xl md:text-4xl font-bold text-slate-900">
-              Trusted by <span className="text-slate-700 font-semibold">10,000+ Businesses</span>
+              Trusted by <span className="text-slate-700 font-semibold">50,000+ Businesses</span>
             </h2>
           </motion.div>
 
@@ -237,20 +237,20 @@ export function Home() {
                 </Link>
               </motion.div>
               <motion.a
-                href="tel:+919925494022"
+                href="tel:+919284405090"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-3 px-10 py-5 bg-white/10 text-white border-2 border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300"
               >
-                <span>Call Now: +91 99254 94022</span>
+                <span>Call Now: +91 92844 05090</span>
               </motion.a>
             </div>
 
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { label: 'Years Experience', value: '30+' },
+                { label: 'Years Experience', value: '65+' },
                 { label: 'Products Sold', value: '50K+' },
-                { label: 'Happy Customers', value: '10K+' },
+                { label: 'Happy Customers', value: '15K+' },
                 { label: 'Service Centers', value: '25+' }
               ].map((stat, i) => (
                 <motion.div

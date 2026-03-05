@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { 
   ChevronRight, 
   Scale, 
-  Gauge,
   Cpu,
   CircleDot,
   Package,
@@ -28,29 +27,26 @@ const productTree: ProductNode[] = [
     name: 'Counter Scales',
     slug: 'counter',
     icon: <Scale className="w-5 h-5" />,
-    description: 'Perfect for retail shops and commercial use',
-    capacities: ['2kg', '5kg', '10kg', '15kg', '20kg']
+    description: 'Perfect for retail shops and commercial use'
   },
   {
     id: 'beam',
     name: 'Beam Scales',
     slug: 'beam',
-    icon: <Gauge className="w-5 h-5" />,
+    icon: <Scale className="w-5 h-5" />,
     description: 'Traditional mechanical precision scales',
     children: [
       {
         id: 'beam-class-b',
         name: 'Class B - Jewelry',
         slug: 'class-b',
-        description: 'High precision for jewelry and precious metals',
-        capacities: ['100g - 500g']
+        description: 'High precision for jewelry and precious metals'
       },
       {
         id: 'beam-class-c',
         name: 'Class C - General',
         slug: 'class-c',
-        description: 'Versatile scales for various applications',
-        capacities: ['100g', '200g', '300g', '1kg', '2kg', '5kg', '10kg', '20kg', '1 Tonne']
+        description: 'Versatile scales for various applications'
       }
     ]
   },
@@ -63,7 +59,7 @@ const productTree: ProductNode[] = [
     children: [
       { id: 'micro', name: 'Micro Scales', slug: 'micro', description: 'Laboratory-grade micro precision' },
       { id: 'tabletop', name: 'Table Top', slug: 'tabletop', description: 'Versatile table top digital scales' },
-      { id: 'chicken', name: 'Chicken/Poultry', slug: 'poultry', description: 'Water-resistant for poultry and meat' },
+      { id: 'chicken', name: 'Chicken/Poultry', slug: 'poultry', description: 'Ideal for poultry and meat applications' },
       { id: 'platform', name: 'Platform', slug: 'platform', description: 'Heavy duty industrial platforms' },
       { id: 'jewellery', name: 'Jewellery', slug: 'jewellery', description: 'High precision for gems and jewelry' },
       { id: 'kitchen', name: 'Kitchen', slug: 'kitchen', description: 'Compact kitchen scales for home use' },
@@ -78,9 +74,9 @@ const productTree: ProductNode[] = [
     icon: <CircleDot className="w-5 h-5" />,
     description: 'Spring balance scales for portable weighing',
     children: [
-      { id: 'circular', name: 'Circular', slug: 'circular', description: 'Classic dial display', capacities: ['25kg', '100kg', '200kg'] },
-      { id: 'pocket', name: 'Pocket', slug: 'pocket', description: 'Compact pocket-sized', capacities: ['100kg'] },
-      { id: 'tubular', name: 'Tubular', slug: 'tubular', description: 'Heavy duty tubular design', capacities: ['50kg', '100kg'] }
+      { id: 'circular', name: 'Circular', slug: 'circular', description: 'Classic dial display' },
+      { id: 'pocket', name: 'Pocket', slug: 'pocket', description: 'Compact pocket-sized' },
+      { id: 'tubular', name: 'Tubular', slug: 'tubular', description: 'Heavy duty tubular design' }
     ]
   },
   {
@@ -166,33 +162,16 @@ function TreeNode({ node, level, index }: TreeNodeProps) {
         )}
 
         {/* Content */}
-        <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <h4 className={`font-semibold transition-colors ${
               level === 0 ? 'text-gray-900 text-lg' : 'text-gray-800'
             } group-hover:text-blue-700`}>
               {node.name}
             </h4>
-            {node.capacities && (
-              <span className="text-xs px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full">
-                {node.capacities.length} sizes
-              </span>
-            )}
           </div>
           {node.description && (
             <p className="text-sm text-gray-500 mt-0.5">{node.description}</p>
-          )}
-          {node.capacities && (
-            <div className="flex flex-wrap gap-1 mt-2">
-              {node.capacities.map((cap, i) => (
-                <span 
-                  key={i}
-                  className="text-xs px-2 py-1 bg-white border border-gray-200 rounded-md text-gray-600 hover:border-blue-300 hover:bg-blue-50 transition-colors"
-                >
-                  {cap}
-                </span>
-              ))}
-            </div>
           )}
         </div>
 
@@ -281,7 +260,7 @@ export function ProductHierarchy() {
               </div>
               <div className="text-white">
                 <h3 className="text-2xl md:text-3xl font-bold">Manish Scale</h3>
-                <p className="text-blue-200">Premium Weighing Solutions Since 1994</p>
+                <p className="text-blue-200">Premium Weighing Solutions Since 1952</p>
               </div>
             </motion.div>
             

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Scale, 
-  Gauge, 
   Cpu, 
   CircleDot, 
   Package,
@@ -36,7 +35,7 @@ const categoryCards: CategoryCard[] = [
     description: 'Perfect for retail shops, grocery stores, and commercial establishments',
     features: ['Digital LCD Display', 'Tare Function', 'Auto Power Off', 'Rechargeable Battery'],
     productCount: 5,
-    priceRange: '₹2,499 - ₹4,499',
+    priceRange: '',
     image: IMAGES.counter,
     color: 'blue',
     gradient: 'from-blue-500 to-blue-700'
@@ -45,11 +44,11 @@ const categoryCards: CategoryCard[] = [
     id: 'beam',
     name: 'Beam Scales',
     slug: 'beam',
-    icon: <Gauge className="w-8 h-8" />,
+    icon: <Scale className="w-8 h-8" />,
     description: 'Traditional mechanical precision scales for accurate measurements',
     features: ['No Power Required', 'Class B & C Options', 'Heavy Duty Build', 'Lifetime Durability'],
     productCount: 10,
-    priceRange: '₹1,999 - ₹24,999',
+    priceRange: '',
     image: IMAGES.beam,
     color: 'emerald',
     gradient: 'from-emerald-500 to-emerald-700'
@@ -62,7 +61,7 @@ const categoryCards: CategoryCard[] = [
     description: 'Modern digital scales with advanced features and LCD displays',
     features: ['High Precision', 'Multiple Units', 'Memory Function', 'Stainless Steel Platform'],
     productCount: 20,
-    priceRange: '₹1,299 - ₹34,999',
+    priceRange: '',
     image: IMAGES.electronic,
     color: 'violet',
     gradient: 'from-violet-500 to-violet-700'
@@ -75,7 +74,7 @@ const categoryCards: CategoryCard[] = [
     description: 'Spring balance scales for portable and overhead weighing',
     features: ['Portable Design', 'Hook Attachment', 'Circular/Tubular Options', 'Weather Resistant'],
     productCount: 6,
-    priceRange: '₹699 - ₹2,499',
+    priceRange: '',
     image: IMAGES.hanging,
     color: 'amber',
     gradient: 'from-amber-500 to-amber-700'
@@ -88,7 +87,7 @@ const categoryCards: CategoryCard[] = [
     description: 'Calibration weights, adapters, batteries and spare parts',
     features: ['Calibration Weights', 'Power Adapters', 'Battery Packs', 'Spare Parts'],
     productCount: 5,
-    priceRange: '₹499 - ₹4,499',
+    priceRange: '',
     image: IMAGES.accessories,
     color: 'rose',
     gradient: 'from-rose-500 to-rose-700'

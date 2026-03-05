@@ -53,14 +53,6 @@ export function ProductGrid({
 
   const compareProducts = products.filter(p => compareList.includes(p.id));
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -204,10 +196,7 @@ export function ProductGrid({
                   <span>±{product.precision}</span>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-xl font-bold text-[#0056b3]">
-                    {formatPrice(product.price)}
-                  </span>
+                <div className="flex items-center justify-end">
                   <Link
                     to={`/product/${product.id}`}
                     className="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-[#0056b3] transition-colors"
@@ -293,14 +282,6 @@ export function ProductGrid({
                     <td className="font-semibold">Precision</td>
                     {compareProducts.map(product => (
                       <td key={product.id} className="text-center">±{product.precision}</td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td className="font-semibold">Price</td>
-                    {compareProducts.map(product => (
-                      <td key={product.id} className="text-center font-bold text-[#0056b3]">
-                        {formatPrice(product.price)}
-                      </td>
                     ))}
                   </tr>
                   <tr>

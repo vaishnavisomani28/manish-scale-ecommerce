@@ -92,22 +92,22 @@ export function Navbar() {
               <span className="hidden sm:inline">info@manishscale.com</span>
             </a>
             <a 
-              href="tel:+919925494022" 
+              href="tel:+919284405090" 
               className="flex items-center gap-2 hover:text-white transition-colors"
-              aria-label="Call us at +91 99254 94022"
+              aria-label="Call us at +91 92844 05090"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              <span>+91 99254 94022</span>
+              <span>+91 92844 05090</span>
             </a>
             <div className="hidden lg:flex items-center gap-2 text-slate-400">
               <Clock className="w-4 h-4" aria-hidden="true" />
-              <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+              <span>Mon - Sun: 7:00 AM - 8:00 PM</span>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4">
             <span className="hidden md:flex items-center gap-2 text-slate-400 text-xs font-medium">
               <Sparkles className="w-3 h-3" />
-              Free Shipping Above ₹5000
+              Registered Trademark • GST No. 24ADBPM0391A1Z8
             </span>
             <div className="flex items-center gap-3" role="list" aria-label="Social media links">
               <a href="#" className="hover:text-white transition-colors p-1" aria-label="Facebook" role="listitem">
@@ -160,7 +160,7 @@ export function Navbar() {
                   <span className="text-slate-800">Manish</span>
                   <span className="text-slate-600"> Scale</span>
                 </h1>
-                <p className="text-xs text-slate-500 -mt-0.5 tracking-wider">PRECISION WEIGHING SINCE 1994</p>
+                <p className="text-xs text-slate-500 -mt-0.5 tracking-wider">PRECISION WEIGHING SINCE 1952</p>
               </div>
             </Link>
 
@@ -380,7 +380,7 @@ export function Navbar() {
                 </button>
               </form>
               <a
-                href="tel:+919925494022"
+                href="tel:+919284405090"
                 className="flex items-center gap-2 px-4 py-2.5 text-slate-700 hover:text-slate-800 transition-colors"
                 aria-label="Call us"
               >
@@ -528,11 +528,11 @@ export function Navbar() {
                 {/* CTA Buttons */}
                 <div className="mt-6 space-y-3">
                   <a
-                    href="tel:+919925494022"
+                    href="tel:+919284405090"
                     className="flex items-center justify-center gap-2 w-full py-4 border-2 border-slate-700 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-colors"
                   >
                     <Phone className="w-5 h-5" />
-                    Call: +91 99254 94022
+                    Call: +91 92844 05090
                   </a>
                   <Link
                     to="/quote"
@@ -547,12 +547,19 @@ export function Navbar() {
                 {/* Contact Info */}
                 <div className="mt-6 pt-6 border-t border-slate-200 space-y-3 text-sm text-slate-600">
                   <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-slate-500" />
-                    <span>info@manishscale.com</span>
+                  <Mail className="w-4 h-4 text-slate-500" />
+                  <span>info@manishscale.com</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-slate-500" />
-                    <span>Ahmedabad, Gujarat, India</span>
+                  <MapPin className="w-4 h-4 text-slate-500" />
+                  <a
+                    href="https://share.google/BFm1HVLjVwez8BzKC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-slate-700"
+                  >
+                    3, Shivaji Nagar, Savarkundla, Gujarat 364515
+                  </a>
                   </div>
                 </div>
               </div>

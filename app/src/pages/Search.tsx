@@ -37,14 +37,6 @@ export function Search() {
     });
   };
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
-
   return (
     <motion.main
       className="min-h-screen bg-gray-50"
@@ -198,10 +190,7 @@ export function Search() {
                       <span>±{product.precision}</span>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold text-[#0056b3]">
-                        {formatPrice(product.price)}
-                      </span>
+                    <div className="flex items-center justify-end">
                       <Link
                         to={`/product/${product.id}`}
                         className="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-[#0056b3] transition-colors"

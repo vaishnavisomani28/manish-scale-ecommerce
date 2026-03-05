@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Award, Users, Globe, TrendingUp, Check, Target, Lightbulb, Shield } from 'lucide-react';
 
 const milestones = [
-  { year: '1994', title: 'Company Founded', description: 'Started as a small weighing scale repair shop in Ahmedabad' },
+  { year: '1952', title: 'Company Founded', description: 'Started as a small weighing scale repair shop in Savarkundla' },
   { year: '2000', title: 'Manufacturing Begin', description: 'Launched our first line of mechanical counter scales' },
   { year: '2005', title: 'ISO Certification', description: 'Achieved ISO 9001:2000 certification for quality management' },
   { year: '2010', title: 'Digital Revolution', description: 'Expanded into electronic and digital weighing solutions' },
@@ -54,7 +54,7 @@ export function About() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Precision Weighing Solutions</h1>
             <p className="text-xl text-blue-100">
-              India's trusted name in precision weighing since 1994. 
+              India's trusted name in precision weighing since 1952. 
               Committed to quality, accuracy, and customer satisfaction.
             </p>
           </motion.div>
@@ -66,8 +66,8 @@ export function About() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Award, value: '30+', label: 'Years Experience' },
-              { icon: Users, value: '10K+', label: 'Happy Customers' },
+              { icon: Award, value: '65+', label: 'Years Experience' },
+              { icon: Users, value: '15K+', label: 'Happy Customers' },
               { icon: Globe, value: '25+', label: 'Countries Served' },
               { icon: TrendingUp, value: '50K+', label: 'Scales Sold' }
             ].map((stat, index) => (
@@ -102,9 +102,9 @@ export function About() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Precision Weighing Solutions was founded in 1994 with a simple mission: 
+                  Precision Weighing Solutions was founded in 1952 with a simple mission: 
                   to provide accurate, reliable, and affordable weighing solutions to businesses 
-                  across India. What started as a small repair shop in Ahmedabad has grown into 
+                  across India. What started as a small repair shop in Savarkundla has grown into 
                   one of the country's leading weighing scale manufacturers.
                 </p>
                 <p>
@@ -140,7 +140,7 @@ export function About() {
             >
               <div className="aspect-video bg-gradient-to-br from-[#0056b3] to-[#003d80] rounded-2xl flex items-center justify-center">
                 <div className="text-center text-white p-8">
-                  <div className="text-6xl font-bold mb-2">30+</div>
+                  <div className="text-6xl font-bold mb-2">65+</div>
                   <div className="text-xl">Years of Excellence</div>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export function About() {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Core Values</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              These principles guide everything we do, from product design to customer service.
+              These principles have guided us since 1952, from product design to customer service.
             </p>
           </motion.div>
 
