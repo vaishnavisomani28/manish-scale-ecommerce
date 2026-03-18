@@ -220,9 +220,6 @@ const badges = [
                   <a href="mailto:manishscaleindia@gmail.com" className="text-gray-400 hover:text-white transition-colors block">
                     manishscaleindia@gmail.com
                   </a>
-                  <a href="mailto:sales@manishscale.com" className="text-gray-500 hover:text-white transition-colors block text-sm">
-                    sales@manishscale.com
-                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-3 group">
