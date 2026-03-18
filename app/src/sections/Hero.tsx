@@ -44,7 +44,7 @@ export function Hero() {
   const stats = [
     { icon: Award, value: 70, suffix: '+', label: 'Years Experience' },
     { icon: Users, value: 50, suffix: 'K+', label: 'Happy Customers' },
-    { icon: Globe, value: null, suffix: ' All Over India', label: 'Service Coverage' },
+    { icon: Globe, value: null, suffix: 'All Over India', label: 'Service Coverage' },
     { icon: TrendingUp, value: 99, suffix: '.9%', label: 'Accuracy Rate' }
   ];
 
@@ -203,7 +203,7 @@ export function Hero() {
               </span>
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                GST No. 24ADBPM0391A1Z8
+                Registered Trademark
               </span>
             </motion.div>
           </div>
@@ -301,15 +301,21 @@ export function Hero() {
               role="listitem"
             >
               <stat.icon className="w-8 h-8 mx-auto mb-3 text-slate-600" aria-hidden="true" />
+              
+              {/* FIXED ANIMATION LOGIC */}
               <div className="text-4xl font-bold mb-1 text-slate-900">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                {stat.value !== null ? (
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                ) : (
+                  <span className="text-3xl">{stat.suffix}</span>
+                )}
               </div>
+              
               <div className="text-sm text-slate-500">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Scroll Indicator removed for smoother scroll experience */}
       </motion.div>
     </section>
   );
