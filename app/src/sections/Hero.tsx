@@ -43,8 +43,8 @@ export function Hero() {
 
   const stats = [
     { icon: Award, value: 65, suffix: '+', label: 'Years Experience' },
-    { icon: Users, value: 15, suffix: 'K+', label: 'Happy Customers' },
-    { icon: Globe, value: 25, suffix: '+', label: 'States Covered' },
+    { icon: Users, value: 50, suffix: 'K+', label: 'Happy Customers' },
+    { icon: Globe, value: null, suffix: ' All Over India', label: 'Service Coverage' },
     { icon: TrendingUp, value: 99, suffix: '.9%', label: 'Accuracy Rate' }
   ];
 
@@ -239,12 +239,6 @@ export function Hero() {
                   />
                   
                   {/* Floating specs */}
-                  <div className="absolute left-4 top-4 px-3 py-1.5 bg-slate-700 text-white text-xs font-medium rounded-lg">
-                    LCD Display
-                  </div>
-                  <div className="absolute right-4 bottom-4 px-3 py-1.5 bg-slate-600 text-white text-xs font-medium rounded-lg">
-                    High Precision
-                  </div>
                   {/* Slider dots */}
                   <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
                     {heroSlides.map((_, i) => (
@@ -262,40 +256,27 @@ export function Hero() {
 
                 {/* Product Info */}
                 <div className="text-center">
-                  <span className="text-sm text-slate-500 uppercase tracking-wider">Electronic Scale</span>
-                  <h3 className="text-2xl font-bold text-slate-800 mt-1 mb-3">
-                    Premium Table Top Scale
-                  </h3>
-                  
-                  {/* Specs */}
-                  <div className="flex justify-center gap-6 mb-4 text-sm">
-                    <span className="flex items-center gap-2 text-slate-600">
-                      <Scale className="w-4 h-4 text-slate-500" />
-                      <span>30kg Capacity</span>
-                    </span>
-                    <span className="flex items-center gap-2 text-slate-600">
-                      <TrendingUp className="w-4 h-4 text-slate-500" />
-                      <span>±1g Precision</span>
-                    </span>
-                  </div>
-
-                {/* Quick Actions */}
-                  <div className="flex gap-3">
-                    <Link
-                      to="/product/ett-30"
-                      className="flex-1 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
-                    >
-                      View Details
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <Link
-                      to="/quote"
-                      className="flex-1 py-3 bg-white border-2 border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl font-semibold transition-all duration-300"
-                    >
-                      Get Quote
-                    </Link>
-                  </div>
-                </div>
+  <h3 className="text-2xl font-bold text-slate-800 mt-1 mb-6">
+    Our Top Scales Collection
+  </h3>
+  
+  {/* Quick Actions */}
+  <div className="flex gap-3">
+    <Link
+      to="/products"
+      className="flex-1 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+    >
+      View All Products
+      <ArrowRight className="w-4 h-4" />
+    </Link>
+    <Link
+      to="/quote"
+      className="flex-1 py-3 bg-white border-2 border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl font-semibold transition-all duration-300"
+    >
+      Get Quote
+    </Link>
+  </div>
+</div>
               </div>
             </div>
           </motion.div>

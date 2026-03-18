@@ -87,25 +87,15 @@ export function Contact() {
                     <MapPin className="w-6 h-6 text-[#0056b3]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Address</h4>
-                    <p className="text-gray-600">
-                      <a
-                        href="https://share.google/BFm1HVLjVwez8BzKC"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#0056b3]"
-                      >
-                        3, Shivaji Nagar, Savarkundla,<br />
-                        Dist. Amreli, Gujarat - 364515<br />
-                        India
-                      </a>
-                      <br />
-                      <span className="text-gray-500">
-                        Branch: B-21, Shivalik Industrial Park, OPP. Karmbhoomi Estate,<br />
-                        Bakrol (Bujrang), Ahmedabad - 382430
-                      </span>
-                    </p>
-                  </div>
+  <h4 className="font-semibold text-gray-800 mb-2">Manufacturing Unit</h4>
+  <p className="text-gray-600 mb-4">
+    3, Shivaji Nagar, Savarkundla,<br />Dist. Amreli, Gujarat - 364515
+  </p>
+  <h4 className="font-semibold text-gray-800 mb-2">Branch Office</h4>
+  <p className="text-gray-600">
+    B-21, Shivalik Industrial Park, OPP. Karmbhoomi Estate,<br />Bakrol (Bujrang), Ahmedabad - 382430
+  </p>
+</div>
                 </div>
 
                 <div className="flex items-start gap-4">
@@ -132,12 +122,9 @@ export function Contact() {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
                     <p className="text-gray-600">
-                      <a href="mailto:info@precisionweigh.com" className="hover:text-[#0056b3]">
-                        info@precisionweigh.com
+                      <a href="mailto:manishscaleindia@gmail.com" className="hover:text-[#0056b3]">
+                        manishscaleindia@gmail.com
                       </a><br />
-                      <a href="mailto:sales@precisionweigh.com" className="hover:text-[#0056b3]">
-                        sales@precisionweigh.com
-                      </a>
                     </p>
                   </div>
                 </div>
@@ -149,7 +136,7 @@ export function Contact() {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Business Hours</h4>
                     <p className="text-gray-600">
-                      Monday - Sunday: 7:00 AM - 8:00 PM<br />
+                      Monday - Sunday: 9:00 AM - 8:00 PM<br />
                       Open all 7 days
                     </p>
                   </div>
@@ -304,13 +291,17 @@ export function Contact() {
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
           >
-            <div className="aspect-video bg-gray-200 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <MapPin className="w-16 h-16 mx-auto mb-4" />
-                <p className="text-lg">Interactive Map</p>
-                <p className="text-sm">3, Shivaji Nagar, Savarkundla &amp; Branch at Bakrol (Bujrang), Ahmedabad</p>
-              </div>
-            </div>
+            <div className="aspect-video w-full">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118147.68202058476!2d71.258281!3d21.336184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39589d8924b80b3d%3A0x6b8f10b7a8c3d9!2sSavarkundla%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+    width="100%" 
+    height="100%" 
+    style={{ border: 0 }} 
+    allowFullScreen={true} 
+    loading="lazy" 
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
           </motion.div>
         </div>
       </section>

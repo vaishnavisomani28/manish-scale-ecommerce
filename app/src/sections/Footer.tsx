@@ -40,9 +40,9 @@ export function Footer() {
     { label: 'Annual Contracts', href: '/services' }
   ];
 
-  const badges = [
+const badges = [
     { icon: Award, label: 'ISO Certified' },
-    { icon: Shield, label: '1 Year Warranty' },
+    { icon: Shield, label: 'Registered Trademark' },
     { icon: Truck, label: 'GST No. 24ADBPM0391A1Z8' }
   ];
 
@@ -185,26 +185,20 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
-                  <MapPin className="w-5 h-5 text-blue-400 group-hover:text-white" aria-hidden="true" />
-                </div>
-                <span className="text-gray-400">
-                  <a
-                    href="https://share.google/BFm1HVLjVwez8BzKC"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white"
-                  >
-                    3, Shivaji Nagar, Savarkundla,<br />
-                    Dist. Amreli, Gujarat - 364515
-                  </a>
-                  <br />
-                  <span className="text-gray-500">
-                    Branch: B-21, Shivalik Industrial Park, OPP. Karmbhoomi Estate,<br />
-                    Bakrol (Bujrang), Ahmedabad - 382430
-                  </span>
-                </span>
-              </li>
+  <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
+    <MapPin className="w-5 h-5 text-blue-400 group-hover:text-white" />
+  </div>
+  <div className="text-gray-400 space-y-3">
+    <div>
+      <h5 className="text-white font-medium mb-1">Head Office & Mfg. Unit</h5>
+      <p>3, Shivaji Nagar, Savarkundla,<br />Dist. Amreli, Gujarat - 364515</p>
+    </div>
+    <div>
+      <h5 className="text-white font-medium mb-1">Ahmedabad Branch</h5>
+      <p>B-21, Shivalik Industrial Park, OPP. Karmbhoomi Estate,<br />Bakrol (Bujrang), Ahmedabad - 382430</p>
+    </div>
+  </div>
+</li>
               <li className="flex items-center gap-3 group">
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-600 transition-colors">
                   <Phone className="w-5 h-5 text-green-400 group-hover:text-white" aria-hidden="true" />
@@ -223,8 +217,8 @@ export function Footer() {
                   <Mail className="w-5 h-5 text-amber-400 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <div>
-                  <a href="mailto:info@manishscale.com" className="text-gray-400 hover:text-white transition-colors block">
-                    info@manishscale.com
+                  <a href="mailto:manishscaleindia@gmail.com" className="text-gray-400 hover:text-white transition-colors block">
+                    manishscaleindia@gmail.com
                   </a>
                   <a href="mailto:sales@manishscale.com" className="text-gray-500 hover:text-white transition-colors block text-sm">
                     sales@manishscale.com
@@ -236,7 +230,7 @@ export function Footer() {
                   <Clock className="w-5 h-5 text-purple-400 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <span className="text-gray-400">
-                  Mon - Sun: 7:00 AM - 8:00 PM<br />
+                  Mon - Sun: 9:00 AM - 8:00 PM<br />
                   <span className="text-gray-500">Open all 7 days</span>
                 </span>
               </li>

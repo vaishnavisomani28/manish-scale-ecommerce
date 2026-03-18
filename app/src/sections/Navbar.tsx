@@ -89,7 +89,7 @@ export function Navbar() {
               aria-label="Email us at info@manishscale.com"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />
-              <span className="hidden sm:inline">info@manishscale.com</span>
+              <span className="hidden sm:inline">manishscaleindia@gmail.com</span>
             </a>
             <a 
               href="tel:+919284405090" 
@@ -101,7 +101,7 @@ export function Navbar() {
             </a>
             <div className="hidden lg:flex items-center gap-2 text-slate-400">
               <Clock className="w-4 h-4" aria-hidden="true" />
-              <span>Mon - Sun: 7:00 AM - 8:00 PM</span>
+              <span>Mon - Sun: 9:00 AM - 8:00 PM</span>
             </div>
           </div>
             <div className="flex items-center gap-4">
@@ -548,7 +548,7 @@ export function Navbar() {
                 <div className="mt-6 pt-6 border-t border-slate-200 space-y-3 text-sm text-slate-600">
                   <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-slate-500" />
-                  <span>info@manishscale.com</span>
+                  <span>manishscaleindia@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-slate-500" />

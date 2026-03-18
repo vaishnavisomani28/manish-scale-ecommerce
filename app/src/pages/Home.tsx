@@ -9,26 +9,10 @@ import { Award, Truck, Headphones, Shield, Star, Quote, ArrowRight, CheckCircle2
 import { Link } from 'react-router-dom';
 
 const features = [
-  {
-    icon: Award,
-    title: 'ISO 9001:2015 Certified',
-    description: 'All our scales meet international quality standards and certifications'
-  },
-  {
-    icon: Truck,
-    title: 'GST No. 24ADBPM0391A1Z8',
-    description: 'Registered and compliant manufacturer for precision weighing solutions across India'
-  },
-  {
-    icon: Headphones,
-    title: 'Dedicated Support',
-    description: 'Expert customer service and technical support team'
-  },
-  {
-    icon: Shield,
-    title: '1 Year Warranty',
-    description: 'Comprehensive warranty with free repairs and replacements'
-  }
+  { icon: Award, title: 'ISO 9001:2015 Certified', description: 'Meeting international quality standards and certifications' },
+  { icon: Shield, title: 'Registered Trademark', description: 'Govt. of India Recognized and Registered Trademark' },
+  { icon: Truck, title: 'GST No. 24ADBPM0391A1Z8', description: 'Registered and compliant manufacturer across India' },
+  { icon: Headphones, title: 'Dedicated Support', description: 'Expert customer service and technical support team' }
 ];
 
 // Placeholder avatars (data URI) to avoid external requests that can hang the page
@@ -111,13 +95,13 @@ export function Home() {
       {/* Category Showcase */}
       <CategoryShowcase />
 
-      <FindYourScaleWizard />
+      
       
       <ProductGrid 
-        title="Featured Products"
-        subtitle="Explore our best-selling weighing scales trusted by businesses nationwide"
-        limit={8}
-      />
+  title="Our Top Products"
+  subtitle="Explore our best-selling weighing scales trusted by businesses nationwide"
+  limit={4}
+/>
 
       {/* Testimonials Section */}
       <section className="py-24 bg-white" aria-labelledby="testimonials-title">
@@ -178,19 +162,20 @@ export function Home() {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-slate-400"
-          >
-            <span className="text-sm uppercase tracking-wider">Trusted by leading brands</span>
-            <div className="h-px w-16 bg-slate-200" />
-            <span className="text-2xl font-bold text-slate-300">Brand 1</span>
-            <span className="text-2xl font-bold text-slate-300">Brand 2</span>
-            <span className="text-2xl font-bold text-slate-300">Brand 3</span>
-            <span className="text-2xl font-bold text-slate-300">Brand 4</span>
-          </motion.div>
+          <motion.div className="mt-16 overflow-hidden relative w-full">
+  <span className="text-sm uppercase tracking-wider text-center block mb-6 text-slate-400">Trusted by leading brands</span>
+  <div className="flex w-full overflow-hidden">
+    <div className="flex animate-[marquee_20s_linear_infinite] whitespace-nowrap gap-16 items-center">
+      {['L&T', 'Wipro', 'UPL', 'Adani', 'Metso', 'Hitachi', 'Texspin'].map((brand, i) => (
+        <span key={i} className="text-3xl font-bold text-slate-300 mx-8">{brand}</span>
+      ))}
+      {/* Duplicate for infinite effect */}
+      {['L&T', 'Wipro', 'UPL', 'Adani', 'Metso', 'Hitachi', 'Texspin'].map((brand, i) => (
+        <span key={`dup-${i}`} className="text-3xl font-bold text-slate-300 mx-8">{brand}</span>
+      ))}
+    </div>
+  </div>
+</motion.div>
         </div>
       </section>
 
@@ -248,11 +233,11 @@ export function Home() {
 
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { label: 'Years Experience', value: '65+' },
-                { label: 'Products Sold', value: '50K+' },
-                { label: 'Happy Customers', value: '15K+' },
-                { label: 'Service Centers', value: '25+' }
-              ].map((stat, i) => (
+  { label: 'Years Experience', value: '65+' },
+  { label: 'Happy Customers', value: '50K+' },
+  { label: 'Service Coverage', value: 'All Over India' },
+  { label: 'Accuracy Rate', value: '99.9%' }
+].map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}

@@ -308,8 +308,8 @@ export function ProductHierarchy() {
         >
           {[
             { label: 'Product Categories', value: '5+' },
-            { label: 'Scale Types', value: '15+' },
-            { label: 'Capacity Range', value: '100g - 1 Ton' },
+            { label: 'Scale Types', value: '25+' },
+            { label: 'Capacity Range', value: '1mg - 5 Ton' },
             { label: 'Years of Excellence', value: '30+' }
           ].map((stat, i) => (
             <motion.div

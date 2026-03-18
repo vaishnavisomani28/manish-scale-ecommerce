@@ -66,11 +66,11 @@ export function About() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Award, value: '65+', label: 'Years Experience' },
-              { icon: Users, value: '15K+', label: 'Happy Customers' },
-              { icon: Globe, value: '25+', label: 'Countries Served' },
-              { icon: TrendingUp, value: '50K+', label: 'Scales Sold' }
-            ].map((stat, index) => (
+  { icon: Award, value: '65+', label: 'Years Experience' },
+  { icon: Users, value: '50K+', label: 'Happy Customers' },
+  { icon: Globe, value: 'All Over India', label: 'Service Coverage' },
+  { icon: TrendingUp, value: '99.9%', label: 'Accuracy Rate' }
+].map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ export function About() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Timeline 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -223,9 +223,9 @@ export function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Team */}
+     { /* Team
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -258,9 +258,9 @@ export function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* CTA */}
+      {/* CTA 
       <section className="py-16 bg-[#0056b3]">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -291,7 +291,7 @@ export function About() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
