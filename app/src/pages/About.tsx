@@ -66,10 +66,10 @@ export function About() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Award, value: '65+', label: 'Years Experience' },
-              { icon: Users, value: '15K+', label: 'Happy Customers' },
-              { icon: Globe, value: '25+', label: 'Countries Served' },
-              { icon: TrendingUp, value: '50K+', label: 'Scales Sold' }
+              { icon: Award, value: '70+', label: 'Years Experience' },
+              { icon: Users, value: '50K+', label: 'Happy Customers' },
+              { icon: Globe, value: 'All Over India', label: 'Service Coverage' },
+              { icon: TrendingUp, value: '99.9%', label: 'Accuracy Rate' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -94,34 +94,33 @@ export function About() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+              
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Precision Weighing Solutions was founded in 1952 with a simple mission: 
-                  to provide accurate, reliable, and affordable weighing solutions to businesses 
-                  across India. What started as a small repair shop in Savarkundla has grown into 
-                  one of the country's leading weighing scale manufacturers.
+                  <strong className="text-gray-800">Manish Scale carries forward a legacy that began in 1950 with Karshan Ramji and Sons</strong>, a pioneering company that became India's first manufacturer of beam scales and mechanical weighing scales. At a time when the weighing industry in India was still developing, Karshan Ramji and Sons set new standards with its commitment to precision, quality craftsmanship, and reliable performance. Over the decades, the company earned the trust of businesses across the country and became a respected name in the weighing scale industry.
                 </p>
                 <p>
-                  Over the past three decades, we have continuously evolved our product range 
-                  and manufacturing capabilities. From traditional mechanical scales to modern 
-                  digital solutions, we have stayed at the forefront of weighing technology.
+                  With changing times and advancements in technology, the business continued to evolve while preserving its strong foundation of accuracy and reliability. <strong className="text-gray-800">In 2012, the next chapter of this legacy began with the establishment of Manish Scale</strong>, focusing on the manufacturing of Hanging Spring Balances. By combining decades of traditional expertise with modern manufacturing techniques, the brand quickly gained recognition for producing high-quality and highly precise weighing instruments.
                 </p>
                 <p>
-                  Today, our products are trusted by thousands of businesses across India and 
-                  exported to over 25 countries worldwide. Our commitment to quality and customer 
-                  satisfaction remains as strong as ever.
+                  Today, Manish Scale is proudly recognized as one of the leading manufacturers of Circular Spring Balances in India, known for its exceptional quality, precision, durability, and consistent performance. Every product is designed and manufactured with strict quality standards to ensure accurate measurements and long-lasting reliability.
+                </p>
+                <p className="font-medium text-[#0056b3] text-lg mt-6">
+                  Manish Scale — A Name of Quality & Precision. A Legacy of Trust.
                 </p>
               </div>
+
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {[
                   'ISO 9001:2015 Certified',
-                  'Government Approved',
+                  'Registered Trademark',
                   'NABL Accredited Lab',
                   'Export Quality Products'
                 ].map((item, i) => (
@@ -132,6 +131,7 @@ export function About() {
                 ))}
               </div>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -140,11 +140,13 @@ export function About() {
             >
               <div className="aspect-video bg-gradient-to-br from-[#0056b3] to-[#003d80] rounded-2xl flex items-center justify-center">
                 <div className="text-center text-white p-8">
-                  <div className="text-6xl font-bold mb-2">65+</div>
+                  <div className="text-6xl font-bold mb-2">70+</div>
                   <div className="text-xl">Years of Excellence</div>
+                  <div className="text-sm mt-2 text-blue-200">Since 1950</div>
                 </div>
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
@@ -160,7 +162,7 @@ export function About() {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Core Values</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              These principles have guided us since 1952, from product design to customer service.
+              These principles have guided us since 1950, from product design to customer service.
             </p>
           </motion.div>
 
@@ -185,7 +187,7 @@ export function About() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Timeline 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -223,9 +225,9 @@ export function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Team */}
+     { /* Team
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -258,9 +260,9 @@ export function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* CTA */}
+      {/* CTA 
       <section className="py-16 bg-[#0056b3]">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -291,7 +293,7 @@ export function About() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

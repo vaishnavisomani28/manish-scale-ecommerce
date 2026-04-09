@@ -11,6 +11,32 @@ import {
   Sparkles
 } from 'lucide-react';
 import { IMAGES } from '@/lib/productImages';
+import { categories } from '@/data/products';
+
+// Helper to count actual products from the data file dynamically
+const getProductCount = (categorySlug: string) => {
+  const category = categories.find(c => c.slug === categorySlug);
+  if (!category) return 1; // Fallback so it never shows 0
+  
+  let count = 0;
+  if (category.products) count += category.products.length;
+  if (category.types) {
+    category.types.forEach(type => {
+      if (type.products) count += type.products.length;
+    });
+  }
+  if (category.subcategories) {
+    category.subcategories.forEach(sub => {
+      if (sub.products) count += sub.products.length;
+      if (sub.sizes) {
+        sub.sizes.forEach(size => {
+          if (size.products) count += size.products.length;
+        });
+      }
+    });
+  }
+  return count > 0 ? count : 1;
+};
 
 interface CategoryCard {
   id: string;
@@ -34,7 +60,7 @@ const categoryCards: CategoryCard[] = [
     icon: <Scale className="w-8 h-8" />,
     description: 'Perfect for retail shops, grocery stores, and commercial establishments',
     features: ['Digital LCD Display', 'Tare Function', 'Auto Power Off', 'Rechargeable Battery'],
-    productCount: 5,
+    productCount: getProductCount('counter'),
     priceRange: '',
     image: IMAGES.counter,
     color: 'blue',
@@ -47,7 +73,7 @@ const categoryCards: CategoryCard[] = [
     icon: <Scale className="w-8 h-8" />,
     description: 'Traditional mechanical precision scales for accurate measurements',
     features: ['No Power Required', 'Class B & C Options', 'Heavy Duty Build', 'Lifetime Durability'],
-    productCount: 10,
+    productCount: getProductCount('beam'),
     priceRange: '',
     image: IMAGES.beam,
     color: 'emerald',
@@ -60,7 +86,7 @@ const categoryCards: CategoryCard[] = [
     icon: <Cpu className="w-8 h-8" />,
     description: 'Modern digital scales with advanced features and LCD displays',
     features: ['High Precision', 'Multiple Units', 'Memory Function', 'Stainless Steel Platform'],
-    productCount: 20,
+    productCount: getProductCount('electronic'),
     priceRange: '',
     image: IMAGES.electronic,
     color: 'violet',
@@ -73,7 +99,7 @@ const categoryCards: CategoryCard[] = [
     icon: <CircleDot className="w-8 h-8" />,
     description: 'Spring balance scales for portable and overhead weighing',
     features: ['Portable Design', 'Hook Attachment', 'Circular/Tubular Options', 'Weather Resistant'],
-    productCount: 6,
+    productCount: getProductCount('hanging'),
     priceRange: '',
     image: IMAGES.hanging,
     color: 'amber',
@@ -86,7 +112,7 @@ const categoryCards: CategoryCard[] = [
     icon: <Package className="w-8 h-8" />,
     description: 'Calibration weights, adapters, batteries and spare parts',
     features: ['Calibration Weights', 'Power Adapters', 'Battery Packs', 'Spare Parts'],
-    productCount: 5,
+    productCount: getProductCount('accessories'),
     priceRange: '',
     image: IMAGES.accessories,
     color: 'rose',
@@ -293,7 +319,7 @@ export function CategoryShowcase() {
             <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="mt-4 text-gray-500">
-            Over 45+ products across 5 categories
+            Over 25+ Scale Types across 5 categories
           </p>
         </motion.div>
       </div>

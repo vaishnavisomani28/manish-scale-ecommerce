@@ -30,8 +30,11 @@ export function Products() {
     contentTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [viewMode]);
 
+  // FIXED useEffect FOR FILTERING
   useEffect(() => {
     let cancelled = false;
+    setIsLoading(true); // Ensure loading state is set when changing categories
+
     const t = setTimeout(() => {
       let allProducts = getAllProducts();
       let title = 'All Products';
@@ -40,12 +43,14 @@ export function Products() {
         const category = categories.find(c => c.slug === categorySlug);
         if (category) {
           title = category.name;
-          allProducts = allProducts.filter((p): p is Product & { categorySlug?: string } => (p as Product & { categorySlug?: string }).categorySlug === categorySlug);
+          // Filter by categorySlug
+          allProducts = allProducts.filter(p => p.categorySlug === categorySlug);
 
           if (typeSlug && category.types) {
             const type = category.types.find(t => t.slug === typeSlug);
             if (type) {
               title = `${category.name} - ${type.name}`;
+              // Filter by type name
               allProducts = allProducts.filter(p => p.type === type.name);
             }
           }
@@ -69,7 +74,8 @@ export function Products() {
         setFilteredProducts(allProducts);
         setIsLoading(false);
       }
-    }, 800);
+    }, 400); // Faster loading feel
+
     return () => {
       cancelled = true;
       clearTimeout(t);
@@ -180,40 +186,35 @@ export function Products() {
 
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar Filters */}
+          
+          {/* FIXED Sidebar Filters */}
           <aside className="lg:w-64 flex-shrink-0">
             <div className="bg-white rounded-xl shadow-sm p-6 sticky top-24">
               <div className="flex items-center gap-2 mb-6">
-                <Filter className="w-5 h-5" />
-                <h3 className="font-semibold">Filters</h3>
+                <Filter className="w-5 h-5 text-gray-700" />
+                <h3 className="font-semibold text-gray-800">Categories</h3>
               </div>
 
-              {/* Categories */}
-              <div className="mb-6">
-                <h4 className="font-medium mb-3">Categories</h4>
-                <ul className="space-y-2">
-                  <li>
+              <ul className="space-y-3">
+                <li>
+                  <Link 
+                    to="/products"
+                    className={`block text-sm transition-colors ${!categorySlug ? 'text-[#0056b3] font-bold' : 'text-gray-600 hover:text-[#0056b3]'}`}
+                  >
+                    All Products
+                  </Link>
+                </li>
+                {categories.map(cat => (
+                  <li key={cat.id}>
                     <Link 
-                      to="/products"
-                      className={`text-sm ${!categorySlug ? 'text-[#0056b3] font-medium' : 'text-gray-600 hover:text-[#0056b3]'}`}
+                      to={`/products/${cat.slug}`}
+                      className={`block text-sm transition-colors ${categorySlug === cat.slug ? 'text-[#0056b3] font-bold' : 'text-gray-600 hover:text-[#0056b3]'}`}
                     >
-                      All Products
+                      {cat.name}
                     </Link>
                   </li>
-                  {categories.map(cat => (
-                    <li key={cat.id}>
-                      <Link 
-                        to={`/products/${cat.slug}`}
-                        className={`text-sm ${categorySlug === cat.slug ? 'text-[#0056b3] font-medium' : 'text-gray-600 hover:text-[#0056b3]'}`}
-                      >
-                        {cat.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Additional filters can be added here if needed */}
+                ))}
+              </ul>
             </div>
           </aside>
 
@@ -306,7 +307,8 @@ export function Products() {
                       <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 mb-4">
                         <span className="flex items-center gap-1">
                           <Scale className="w-4 h-4" />
-                          {product.capacity}
+                          {/* FIXED to baseCapacity */}
+                          {product.baseCapacity}
                         </span>
                         <span>±{product.precision}</span>
                         {product.category && (
@@ -375,8 +377,9 @@ export function Products() {
                   </tr>
                   <tr>
                     <td className="font-semibold">Capacity</td>
+                    {/* FIXED to baseCapacity */}
                     {compareProducts.map(product => (
-                      <td key={product.id} className="text-center">{product.capacity}</td>
+                      <td key={product.id} className="text-center">{product.baseCapacity}</td>
                     ))}
                   </tr>
                   <tr>

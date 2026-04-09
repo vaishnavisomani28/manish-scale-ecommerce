@@ -63,9 +63,9 @@ export function UnitConverter() {
   };
 
   return (
-    <section className="py-12 bg-[#003d80] text-white">
+    <section className="py-8 bg-[#003d80] text-white">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 items-center">
           {/* Left Side - Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -129,7 +129,7 @@ export function UnitConverter() {
                       type="number"
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0056b3] focus:ring-2 focus:ring-[#0056b3]/20 text-lg font-semibold"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0056b3] focus:ring-2 focus:ring-[#0056b3]/20 text-lg font-semibold"
                       placeholder="Enter value"
                       min="0"
                       step="any"
@@ -142,7 +142,7 @@ export function UnitConverter() {
                     <select
                       value={fromUnit}
                       onChange={(e) => setFromUnit(e.target.value)}
-                      className="w-32 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0056b3] bg-white"
+                      className="w-32 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0056b3] bg-white"
                     >
                       {units.map(unit => (
                         <option key={unit.value} value={unit.value}>
@@ -174,7 +174,7 @@ export function UnitConverter() {
                         type="text"
                         value={isConverting ? '...' : formatResult(result)}
                         readOnly
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-lg font-bold text-[#0056b3]"
+                        className="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-lg font-bold text-[#0056b3]"
                       />
                       {isConverting && (
                         <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -190,7 +190,7 @@ export function UnitConverter() {
                     <select
                       value={toUnit}
                       onChange={(e) => setToUnit(e.target.value)}
-                      className="w-32 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0056b3] bg-white"
+                      className="w-32 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0056b3] bg-white"
                     >
                       {units.map(unit => (
                         <option key={unit.value} value={unit.value}>

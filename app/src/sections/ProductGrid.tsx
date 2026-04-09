@@ -189,7 +189,7 @@ export function ProductGrid({
                 <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                   <span className="flex items-center gap-1">
                     <Scale className="w-4 h-4" />
-                    {product.capacity}
+                    {product.baseCapacity}
                   </span>
                   <span>±{product.precision}</span>
                 </div>
@@ -273,7 +273,7 @@ export function ProductGrid({
                   <tr>
                     <td className="font-semibold">Capacity</td>
                     {compareProducts.map(product => (
-                      <td key={product.id} className="text-center">{product.capacity}</td>
+                      <td key={product.id} className="text-center">{product.baseCapacity}</td>
                     ))}
                   </tr>
                   <tr>

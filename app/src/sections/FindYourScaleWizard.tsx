@@ -147,7 +147,7 @@ export function FindYourScaleWizard() {
     setSelectedWeight('');
     setRecommendation(null);
   };
-
+ 
   return (
     <section className="py-16 bg-gradient-to-br from-[#f5f7fa] to-white">
       <div className="container mx-auto px-4">

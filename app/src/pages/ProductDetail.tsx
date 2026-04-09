@@ -24,6 +24,8 @@ export function ProductDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [selectedCapacityIndex, setSelectedCapacityIndex] = useState(0); // NEW
+  const [currentImage, setCurrentImage] = useState<string>(''); // NEW
 
   useEffect(() => {
     let cancelled = false;
@@ -32,6 +34,12 @@ export function ProductDetail() {
       if (cancelled) return;
       if (foundProduct) {
         setProduct(foundProduct);
+        
+        // Add the two new lines right here:
+        setSelectedCapacityIndex(0);
+        setCurrentImage(foundProduct.capacities?.[0]?.image || foundProduct.image);
+        
+        // The rest stays exactly the same:
         const related = getProductsByCategory(foundProduct.categorySlug || '')
           .filter(p => p.id !== id)
           .slice(0, 4);
@@ -127,7 +135,7 @@ export function ProductDetail() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm">
               <div className="aspect-square relative">
                 <img
-                  src={getProductImageUrl(product, 'large')}
+                  src={currentImage} // UPDATED
                   alt={product.name}
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -181,14 +189,7 @@ export function ProductDetail() {
               <span className="text-gray-500">(128 reviews)</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-                <Scale className="w-6 h-6 text-[#0056b3]" />
-                <div>
-                  <p className="text-sm text-gray-500">Capacity</p>
-                  <p className="font-semibold">{product.capacity}</p>
-                </div>
-              </div>
+            <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                 <Check className="w-6 h-6 text-[#0056b3]" />
                 <div>
@@ -196,7 +197,43 @@ export function ProductDetail() {
                   <p className="font-semibold">±{product.precision}</p>
                 </div>
               </div>
+              {product.warranty && (
+                <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                  <Shield className="w-6 h-6 text-[#0056b3]" />
+                  <div>
+                    <p className="text-sm text-gray-500">Warranty</p>
+                    <p className="font-semibold">{product.warranty}</p>
+                  </div>
+                </div>
+              )}
             </div>
+
+            {/* Capacity Dropdown (NEW) */}
+            {product.capacities && product.capacities.length > 0 && product.capacities[0].weight !== 'N/A' && (
+              <div className="mb-8">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Select Capacity:
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {product.capacities.map((cap, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setSelectedCapacityIndex(index);
+                        setCurrentImage(cap.image || product.image);
+                      }}
+                      className={`px-4 py-2 border rounded-lg text-sm font-medium transition-colors ${
+                        selectedCapacityIndex === index 
+                          ? 'bg-[#0056b3] text-white border-[#0056b3]' 
+                          : 'bg-white text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      {cap.weight}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Quantity Selector */}
             <div className="flex items-center gap-4 mb-8">
@@ -282,7 +319,7 @@ export function ProductDetail() {
               <h3 className="text-xl font-semibold mb-4">Product Description</h3>
               <p className="text-gray-600 leading-relaxed">
                 The {product.name} is a high-precision weighing solution designed for 
-                {product.category?.toLowerCase() || 'various'} applications. With a capacity of {product.capacity} 
+                {product.category?.toLowerCase() || 'various'} applications. With a capacity of {product.baseCapacity} 
                 and precision of ±{product.precision}, it delivers accurate measurements every time.
               </p>
               <ul className="mt-6 space-y-3">
@@ -309,26 +346,48 @@ export function ProductDetail() {
               <h3 className="text-xl font-semibold mb-4">Technical Specifications</h3>
               <table className="w-full max-w-2xl">
                 <tbody className="divide-y">
-                  <tr>
-                    <td className="py-3 text-gray-500">Capacity</td>
-                    <td className="py-3 font-medium">{product.capacity}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 text-gray-500">Precision</td>
-                    <td className="py-3 font-medium">±{product.precision}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 text-gray-500">Display</td>
-                    <td className="py-3 font-medium">LCD with backlight</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 text-gray-500">Power</td>
-                    <td className="py-3 font-medium">AC Adapter / Rechargeable Battery</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 text-gray-500">Warranty</td>
-                    <td className="py-3 font-medium">1 Year</td>
-                  </tr>
+                  {product.capacities && product.capacities[0].weight !== 'N/A' && (
+                    <tr>
+                      <td className="py-3 text-gray-500">Selected Capacity</td>
+                      <td className="py-3 font-medium">{product.capacities[selectedCapacityIndex].weight}</td>
+                    </tr>
+                  )}
+                  {product.precision !== 'N/A' && (
+                    <tr>
+                      <td className="py-3 text-gray-500">Precision</td>
+                      <td className="py-3 font-medium">{product.precision}</td>
+                    </tr>
+                  )}
+                  {product.bodyMaterial && (
+                    <tr>
+                      <td className="py-3 text-gray-500">Body Material</td>
+                      <td className="py-3 font-medium">{product.bodyMaterial}</td>
+                    </tr>
+                  )}
+                  {product.displayType && (
+                    <tr>
+                      <td className="py-3 text-gray-500">Display</td>
+                      <td className="py-3 font-medium">{product.displayType}</td>
+                    </tr>
+                  )}
+                  {product.battery && (
+                    <tr>
+                      <td className="py-3 text-gray-500">Battery</td>
+                      <td className="py-3 font-medium">{product.battery}</td>
+                    </tr>
+                  )}
+                  {product.panSize && (
+                    <tr>
+                      <td className="py-3 text-gray-500">Pan Size</td>
+                      <td className="py-3 font-medium">{product.panSize}</td>
+                    </tr>
+                  )}
+                  {product.warranty && (
+                    <tr>
+                      <td className="py-3 text-gray-500">Warranty</td>
+                      <td className="py-3 font-medium">{product.warranty}</td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </TabsContent>
